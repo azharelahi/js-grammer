@@ -5,7 +5,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-rl.question("Enter a number: ", (answer) => {
+rl.question("\nEnter a number: \n", (answer) => {
   const a = Number(answer);
 
   if (Number.isNaN(a)) {
@@ -38,11 +38,14 @@ rl.question("Enter a number: ", (answer) => {
 
   rl.close(); 
 });
-let babyAge = 1;
-let isBirthday = true;
 
-if (isBirthday) {
-    let babyAge = 2; 
+let iife = (function(){console.log("Azhar is here"); return 5})()
+console.log(iife)
+let a = function(a,b){
+    if(true){
+        return true
+    }else{
+        return false
+    }
 }
-
-console.log(babyAge); // Hmmmm. This prints 1
+console.log(a(2,4))
