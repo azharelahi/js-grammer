@@ -1,6 +1,33 @@
-let arr1 =[1,2,3,"Azhar"]
-console.log(arr1)
-let arr2=arr1;
-arr2.push(4)
-console.log(arr1)
-console.log(arr2)
+function createWallet(initialBalance){
+    let balance = initialBalance
+    function canWithDraw(amount){
+        return amount<=balance
+    }
+return {
+     depositeNew(amount){
+balance=balance+=amount
+    },
+    withDraw(amount){
+        if (!canWithDraw(amount)){
+throw new Error("Insufficientt balance ")
+        }
+        balance -=amount
+    
+
+    },
+    getBalance(){
+        return balance
+    }
+}
+
+}
+
+const createBankAccount = createWallet(2000)
+
+console.log(createBankAccount.getBalance()
+)
+createBankAccount.depositeNew(2000)
+
+console.log(createBankAccount.getBalance())
+createBankAccount.withDraw(3500)
+console.log(createBankAccount.getBalance())
